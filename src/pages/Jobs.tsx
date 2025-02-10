@@ -7,6 +7,7 @@ import useGetJobs from "@/hooks/useGetJobs";
 import JobsHero from "@/components/JobsHero";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router";
+import { Skeleton } from "@/components/ui/skeleton";
 
 function Jobs() {
   const user = useSelector((state: RootState) => state.user);
@@ -16,7 +17,16 @@ function Jobs() {
 
   if (user.role === "user" || user.role === "admin") {
     if (isLoading) {
-      return <div>Loading...</div>;
+      return (
+        <div className="max-w-screen my-5">
+          <Skeleton className="max-w-full h-96 m-10 border-2" />
+          <section className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-screen ">
+            <Skeleton className=" h-60 mx-10 border-2" />
+            <Skeleton className=" h-60 mx-10 border-2" />
+            <Skeleton className=" h-60 mx-10 border-2" />
+          </section>
+        </div>
+      );
     }
     if (isError) {
       return <div>Error: {JSON.stringify(error)}</div>;

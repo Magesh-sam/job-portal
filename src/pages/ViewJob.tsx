@@ -1,6 +1,7 @@
 import HTMLRenderer from "@/components/HTMLRenderer";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 import useGetJobById from "@/hooks/useGetJobById";
 import { Badge, MapPin, Star } from "lucide-react";
 import { Link, useParams } from "react-router";
@@ -8,7 +9,16 @@ import { Link, useParams } from "react-router";
 function ViewJob() {
   const { id } = useParams();
   const { data: job, isLoading, error, isError } = useGetJobById(id || "");
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading)
+    return (
+      <main className="grid grid-cols-1 justify-items-center  gap-4 w-screen pt-5 ">
+        <Skeleton className="w-full max-w-2xl h-96" />
+        <div className="flex gap-4  max-wjustify-center items-center">
+          <Skeleton className=" w-28 h-8 " />
+          <Skeleton className=" w-28 h-8" />
+        </div>
+      </main>
+    );
   if (isError) return <p>{error?.message}</p>;
   if (!job) return <p>Job not found</p>;
   console.log(job);
