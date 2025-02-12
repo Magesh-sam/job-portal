@@ -8,10 +8,9 @@ import Unauthorized from "./components/Unauthorized";
 import LandingPage from "./pages/LandingPage";
 import UnderConstruction from "./pages/UnderConstruction";
 import NotFound from "./pages/NotFound";
-import NewJobForm from "./pages/NewJobForm";
 import ViewJob from "./pages/ViewJob";
-import LoginForm from "./components/LoginForm";
 import Login from "./pages/Login";
+import JobForm from "./components/JobForm";
 
 function App() {
   const user = useSelector((state: RootState) => state.user);
@@ -31,10 +30,14 @@ function App() {
           element={isAuthenticated ? <ViewJob /> : <Unauthorized />}
         />
         <Route
+          path="/jobs/edit/:id"
+          element={isAuthenticated ? <JobForm /> : <Unauthorized />}
+        />
+        <Route
           path="/jobs/new"
           element={
             isAuthenticated && user.role === "admin" ? (
-              <NewJobForm />
+              <JobForm />
             ) : (
               <Unauthorized />
             )

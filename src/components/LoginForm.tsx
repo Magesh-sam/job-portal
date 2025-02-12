@@ -12,7 +12,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { autheticateUser } from "@/lib/utils";
+import { autheticateUser, delay } from "@/lib/utils";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/store";
 import { loginFailure, loginSuccess } from "@/redux/features/user/userSlice";
@@ -36,7 +36,7 @@ export default function LoginForm() {
     setError(null);
 
     // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await delay(1000);
 
     const user = autheticateUser(data.username, data.password);
     if (user) {

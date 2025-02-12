@@ -21,3 +21,9 @@ export function autheticateUser(username: string, password: string) {
 export const API = axios.create({
   baseURL: "http://localhost:3000",
 });
+
+export function delay(delay: number) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, delay);
+  });
+}

@@ -10,7 +10,18 @@ import {
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router";
 
-function JobCard({ id, jobTitle, company, locations, shortDescription }: Job) {
+type JobCardContent = Job & {
+  role: string;
+};
+
+function JobCard({
+  id,
+  jobTitle,
+  company,
+  locations,
+  shortDescription,
+  role,
+}: JobCardContent) {
   const navigate = useNavigate();
   console.log(jobTitle);
   return (
@@ -24,12 +35,24 @@ function JobCard({ id, jobTitle, company, locations, shortDescription }: Job) {
       <CardContent>
         <p>{shortDescription}</p>
       </CardContent>
-      <CardFooter className="flex justify-end gap-3">
-        <Button variant="outline" onClick={() => navigate(`/jobs/${id}`)}>
-          View
-        </Button>
-        <Button>Apply</Button>
-      </CardFooter>
+      {role === "user" && (
+        <CardFooter className="flex justify-end gap-3">
+          <>
+            <Button variant="outline" onClick={() => navigate(`/jobs/${id}`)}>
+              View
+            </Button>
+            <Button variant={"default"}>Apply</Button>
+          </>
+        </CardFooter>
+      )}
+      {role === "admin" && (
+        <CardFooter className="flex justify-end gap-3">
+          <>
+            <Button onClick={() => navigate(`/jobs/edit/${id}`)}>Edit</Button>
+            <Button variant={"destructive"}>Delete</Button>
+          </>
+        </CardFooter>
+      )}
     </Card>
   );
 }
