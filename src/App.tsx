@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import ViewJob from "./pages/ViewJob";
 import Login from "./pages/Login";
 import JobForm from "./components/JobForm";
+import Register from "./pages/Register";
 
 function App() {
   const user = useSelector((state: RootState) => state.user);
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route
           path="/jobs"
           element={isAuthenticated ? <Jobs /> : <Unauthorized />}

@@ -3,8 +3,9 @@ import { RootState } from "@/redux/store";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { useEffect } from "react";
+import RegisterForm from "@/components/RegisterForm";
 
-function Login() {
+function Register() {
   const user = useSelector((state: RootState) => state.user);
   const navigate = useNavigate();
 
@@ -20,9 +21,9 @@ function Login() {
 
   return (
     <main className="min-h-screen bg-background container mx-auto px-4 py-8 flex justify-center items-center">
-      <LoginForm />
+      <RegisterForm />
     </main>
   );
 }
 
-export default Login;
+export default Register;

@@ -27,3 +27,8 @@ export function delay(delay: number) {
     setTimeout(resolve, delay);
   });
 }
+
+export const isUserExist = (username: string) => {
+  const user = dummyUsers.find((u) => u.username === username);
+  return user ? true : false;
+};
