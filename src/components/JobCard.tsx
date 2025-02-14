@@ -20,6 +20,9 @@ import {
 
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router";
+import useDeleteJobById from "@/hooks/useDeleteJobById";
+import { delay } from "@/lib/utils";
+import { useState } from "react";
 
 type JobCardContent = Job & {
   role: string;
@@ -27,6 +30,7 @@ type JobCardContent = Job & {
 
 const JobCardUserActions = ({ id }: { id: string }) => {
   const navigate = useNavigate();
+
   const handleApply = () => {};
 
   return (
@@ -43,19 +47,29 @@ const JobCardUserActions = ({ id }: { id: string }) => {
 
 const JobCardAdminActions = ({ id }: { id: string }) => {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+  const { mutate: deleteJob } = useDeleteJobById();
   const handleEdit = () => {
     navigate(`/jobs/edit/${id}`);
   };
-  const handleDelete = () => {};
+  const handleDelete = async () => {
+    try {
+      setIsLoading(true);
+      await delay(1000);
+      deleteJob(id);
+    } catch (error) {
+      console.error("Error deleting job:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
   return (
     <CardFooter className="flex justify-end gap-3">
       <>
         <Button onClick={handleEdit}>Edit</Button>
         <Dialog>
           <DialogTrigger>
-            <Button onClick={handleDelete} variant={"destructive"}>
-              Delete
-            </Button>
+            <Button variant={"destructive"}>Delete</Button>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
@@ -69,7 +83,13 @@ const JobCardAdminActions = ({ id }: { id: string }) => {
               <DialogClose>
                 <Button>Cancel</Button>
               </DialogClose>
-              <Button variant={"destructive"}>Delete</Button>
+              <Button
+                disabled={isLoading}
+                variant={"destructive"}
+                onClick={handleDelete}
+              >
+                {isLoading ? "Deleting..." : "Delete"}
+              </Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>

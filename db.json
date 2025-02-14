@@ -134,43 +134,6 @@
       "salaryRangeMax": 30000,
       "experienceMin": 0,
       "experienceMax": 1
-    },
-    {
-      "id": "b82b5fb3-6358-4851-a751-9e68447539db",
-      "jobTitle": "Junior Developer",
-      "company": "Company",
-      "locations": [
-        "Coimbatore"
-      ],
-      "shortDescription": "Looking for a junior developer with strong problem-solving skills.",
-      "description": "We are hiring a junior developer who is passionate about coding and eager to learn. The role involves working on frontend and backend development, participating in code reviews, and collaborating with senior engineers. The ideal candidate should have a strong grasp of JavaScript, React, and Redux, with the ability to take ownership of tasks.",
-      "skills": [
-        "JavaScript",
-        "React",
-        "Redux"
-      ],
-      "salaryRangeMin": 40000,
-      "salaryRangeMax": 60000,
-      "experienceMin": 1,
-      "experienceMax": 3
-    },
-    {
-      "id": "67b0aba1-1be3-4088-81d8-f3a38e861e67",
-      "jobTitle": "React JS Developer",
-      "company": "Pied Pipers",
-      "shortDescription": "Experience on writing code in React JS & debug code for analysis",
-      "description": "<p><strong>Requirements / Qualifications</strong></p>\n<p>&bull; 2-12 years of relevant experience</p>\n<p>&bull; Experience on writing code in React JS &amp; debug code for analysis</p>\n<p>&bull; Strong knowledge of UI technologies (React JS, Redux, HTML, CSS and Java Script)</p>\n<p>&nbsp;</p>\n<p><strong>Roles &amp; Responsibilities:</strong></p>\n<p>&bull; Develop and Maintain User Interfaces:</p>\n<p>Design and implement responsive, high-performance, and visually appealing user interfaces using React.js, ensuring cross-browser and cross-device compatibility.</p>\n<p>&bull; Collaborate with Cross-Functional Teams:</p>\n<p>Work closely with designers, backend developers, product managers, and stakeholders to translate UI/UX designs and business requirements into functional components.</p>\n<p>&bull; Optimize Application Performance:</p>\n<p>Identify and resolve performance bottlenecks by optimizing components, managing state effectively, and leveraging tools like React Profiler.</p>\n<p>&bull; Implement Best Practices:</p>\n<p>Ensure adherence to coding standards, design principles, and React best practices, including the use of reusable components and hooks.</p>\n<p>&bull; State Management:</p>\n<p>Manage application state efficiently using tools like Redux, ensuring seamless data flow across components.</p>\n<p>&bull; Unit and Integration Testing:</p>\n<p>Write and maintain comprehensive tests using tools like Jest, React Testing Library, or Cypress to ensure code quality and prevent regressions.</p>\n<p>&bull; Troubleshoot and Debug:</p>\n<p>Diagnose and resolve UI/UX issues, browser compatibility challenges, and technical bugs promptly to ensure a smooth user experience.</p>\n<p>&nbsp;</p>\n<p><strong>Role: </strong><a class=\"TYwFhGrAOkNlxnxENufwIbYSlSJAqSIcLM \" href=\"https://www.naukri.com/front-end-developer-jobs\" target=\"_blank\" rel=\"noopener\" data-test-app-aware-link=\"\">Front End Developer</a></p>\n<p><strong>Industry Type: </strong><a class=\"TYwFhGrAOkNlxnxENufwIbYSlSJAqSIcLM \" href=\"https://www.naukri.com/it-services-consulting-jobs\" target=\"_blank\" rel=\"noopener\" data-test-app-aware-link=\"\">IT Services &amp; Consulting</a></p>\n<p><strong>Department: </strong><a class=\"TYwFhGrAOkNlxnxENufwIbYSlSJAqSIcLM \" href=\"https://www.naukri.com/engineering-software-qa-jobs\" target=\"_blank\" rel=\"noopener\" data-test-app-aware-link=\"\">Engineering - Software &amp; QA</a></p>\n<p><strong>Employment Type: </strong>Full Time, Permanent</p>\n<p><strong>Role Category: </strong>Software Development</p>\n<p>&nbsp;</p>\n<p><strong>Education</strong></p>\n<p><strong>UG: </strong>B.Sc in Computers, B.Tech/B.E. in Any Specialization, BCA in Any Specialization</p>\n<p><strong>PG: </strong>M.Tech in Any Specialization, MCA in Any Specialization</p>",
-      "locations": [
-        "Remote"
-      ],
-      "skills": [
-        "React",
-        "TypeScript"
-      ],
-      "salaryRangeMin": 500000,
-      "salaryRangeMax": 1000000,
-      "experienceMin": 3,
-      "experienceMax": 5
     }
   ],
   "savedJobs": []

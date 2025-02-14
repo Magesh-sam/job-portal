@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import { Button } from "@/components/ui/button";
 import { AppDispatch, RootState } from "@/redux/store";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,17 +25,32 @@ export default function Navbar() {
         </Link>
         <nav className=" ">
           <ul className="flex space-x-4 items-center ">
-            {user.role === "user" && (
+            {(user.role === "user" || !user.isUserLoggedIn) && (
               <li>
-                <Link to="/jobs" className="hover:underline">
+                <NavLink
+                  to="/jobs"
+                  className={({ isActive }) =>
+                    isActive ? "font-bold" : "hover:underline"
+                  }
+                >
                   Find Jobs
-                </Link>
+                </NavLink>
               </li>
             )}
-            {user.role === "admin" && (
+            {(user.role === "admin" || !user.isUserLoggedIn) && (
               <li>
                 <Link to="/hire-talent" className="hover:underline">
                   Hire Talent
+                </Link>
+              </li>
+            )}
+            {user.isUserLoggedIn && (
+              <li>
+                <Link
+                  to={`/profile/${user.username}`}
+                  className="hover:underline"
+                >
+                  Profile
                 </Link>
               </li>
             )}
