@@ -10,7 +10,7 @@ import UnderConstruction from "./pages/UnderConstruction";
 import NotFound from "./pages/NotFound";
 import ViewJob from "./pages/ViewJob";
 import Login from "./pages/Login";
-import JobForm from "./components/JobForm";
+import JobForm from "./pages/JobForm";
 import Register from "./pages/Register";
 
 function App() {

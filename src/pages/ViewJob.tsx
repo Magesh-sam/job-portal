@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import useGetJobById from "@/hooks/useGetJobById";
-import { Badge, MapPin, Star } from "lucide-react";
-import { Link, useParams } from "react-router";
+import {  Bookmark, ChevronRight, MapPin, Star } from "lucide-react";
+import {useParams } from "react-router";
 
 function ViewJob() {
   const { id } = useParams();
@@ -72,11 +72,13 @@ function ViewJob() {
           </div>
         </CardContent>
       </Card>
-      <div className="flex gap-4 ">
-        <Button className="border-2" variant={"secondary"}>
-          Save
+      <div className="flex gap-4">
+        <Button className=" group transition-all" variant="outline">
+          Save <Bookmark className="group-hover:fill-black" />
         </Button>
-        <Button>Apply Now</Button>
+        <Button className="group transition-all">
+          Apply Now <ChevronRight className="transition-all group-hover:ml-2" />
+        </Button>
       </div>
     </main>
   );

@@ -25,16 +25,20 @@ export default function Navbar() {
         </Link>
         <nav className=" ">
           <ul className="flex space-x-4 items-center ">
-            <li>
-              <Link to="/jobs" className="hover:underline">
-                Find Jobs
-              </Link>
-            </li>
-            <li>
-              <Link to="/hire-talent" className="hover:underline">
-                Hire Talent
-              </Link>
-            </li>
+            {user.role === "user" && (
+              <li>
+                <Link to="/jobs" className="hover:underline">
+                  Find Jobs
+                </Link>
+              </li>
+            )}
+            {user.role === "admin" && (
+              <li>
+                <Link to="/hire-talent" className="hover:underline">
+                  Hire Talent
+                </Link>
+              </li>
+            )}
             <li>
               {isAuthenticated ? (
                 <Button size="sm" onClick={Logout}>

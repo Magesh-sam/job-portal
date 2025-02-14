@@ -19,7 +19,7 @@ import { locations, skills } from "@/lib/data";
 import { Job } from "@/lib/types";
 import { Editor } from "@tinymce/tinymce-react";
 import useGetJobById from "@/hooks/useGetJobById";
-import { Skeleton } from "./ui/skeleton";
+import { Skeleton } from "../components/ui/skeleton";
 import useUpdateJob from "@/hooks/useUpdateJob";
 import { delay } from "@/lib/utils";
 
@@ -271,18 +271,23 @@ function JobForm() {
               )}
             />
           ))}
+          <div className="flex gap-4  justify-end ">
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => navigate("/jobs")}
+            >
+              Cancel
+            </Button>
 
-          <Button
-            disabled={isSubmitting}
-            className="w-fit mx-auto"
-            type="submit"
-          >
-            {isSubmitting
-              ? "Submitting..."
-              : isEditing
-              ? "Update Job"
-              : "Create Job"}
-          </Button>
+            <Button disabled={isSubmitting} type="submit">
+              {isSubmitting
+                ? "Submitting..."
+                : isEditing
+                ? "Update Job"
+                : "Create Job"}
+            </Button>
+          </div>
         </form>
       </Form>
     </main>

@@ -10,7 +10,7 @@
         "Tokyo"
       ],
       "shortDescription": "Join us as a software developer to build amazing products.",
-      "description": "XYZ Corp is looking for a skilled software developer to work on modern web applications. The ideal candidate should be proficient in JavaScript, React, and Node.js, with a strong problem-solving mindset and the ability to collaborate with cross-functional teams. Responsibilities include designing, coding, testing, and deploying scalable software solutions.",
+      "description": "<p>XYZ Corp is looking for a skilled software developer to work on modern web applications. The ideal candidate should be proficient in JavaScript, React, and Node.js, with a strong problem-solving mindset and the ability to collaborate with cross-functional teams. Responsibilities include designing, coding, testing, and deploying scalable software solutions.</p>",
       "skills": [
         "JavaScript",
         "React",
@@ -172,5 +172,6 @@
       "experienceMin": 3,
       "experienceMax": 5
     }
-  ]
+  ],
+  "savedJobs": []
 }

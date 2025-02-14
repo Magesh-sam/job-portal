@@ -20,6 +20,7 @@
   `git clone https://github.com/Magesh-sam/job-portal.git`
 - install dependencies
   `pnpm install`
+- get tinyMCE key for WYSIWYG editor and add it in your .env
 - front-end : `pnpm run dev`
 - json-server(API) : `pnpm run server`
 - Feel free to customize **db.json** (data for API)
