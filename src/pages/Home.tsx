@@ -30,7 +30,7 @@ export default function Home() {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300"
-                onClick={() => navigate("/jobs")}
+                onClick={() => navigate("/login")}
               >
                 Explore Opportunities <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -78,7 +78,7 @@ export default function Home() {
           <Button
             size="lg"
             className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300 rounded-full px-8 py-6 text-lg"
-            onClick={() => navigate("/jobs")}
+            onClick={() => navigate("/login")}
           >
             Ignite Your Potential <ChevronRight className="ml-2 h-5 w-5" />
           </Button>
