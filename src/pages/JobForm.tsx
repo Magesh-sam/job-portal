@@ -21,7 +21,7 @@ import { Editor } from "@tinymce/tinymce-react";
 import useGetJobById from "@/hooks/useGetJobById";
 import { Skeleton } from "../components/ui/skeleton";
 import useUpdateJob from "@/hooks/useUpdateJob";
-import { delay } from "@/lib/utils";
+import { delay, reactSelectCustomStyles } from "@/lib/utils";
 
 const formSchema = z
   .object({
@@ -226,8 +226,9 @@ function JobForm() {
                     <Select
                       isMulti
                       options={options}
-                      className="basic-multi-select"
-                      classNamePrefix="select"
+                      className="react-select-container "
+                      classNamePrefix="my-react-select"
+                      styles={reactSelectCustomStyles()}
                       value={options.filter((option) =>
                         field.value.includes(option.value)
                       )}
