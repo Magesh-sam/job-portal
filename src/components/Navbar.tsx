@@ -4,6 +4,8 @@ import { AppDispatch, RootState } from "@/redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "@/redux/features/user/userSlice";
 import ToggleTheme from "./ToggleTheme";
+import ProfileDropdown from "./ProfileDropdown";
+import { LogIn, LogOut } from "lucide-react";
 
 export default function Navbar() {
   const user = useSelector((state: RootState) => state.user);
@@ -46,22 +48,17 @@ export default function Navbar() {
             )}
             {user.isUserLoggedIn && (
               <li>
-                <Link
-                  to={`/profile/${user.username}`}
-                  className="hover:underline"
-                >
-                  Profile
-                </Link>
+                <ProfileDropdown />
               </li>
             )}
             <li>
               {isAuthenticated ? (
                 <Button size="sm" onClick={Logout}>
-                  Logout
+                  <LogOut /> Logout
                 </Button>
               ) : (
                 <Button size="sm" onClick={() => navigate("/login")}>
-                  Login
+                  Login <LogIn />
                 </Button>
               )}
             </li>

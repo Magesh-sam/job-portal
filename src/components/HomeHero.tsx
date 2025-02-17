@@ -1,5 +1,3 @@
-import { Sparkles } from "lucide-react";
-import { Button } from "./ui/button";
 import { useNavigate } from "react-router";
 
 export default function HomeHero() {
