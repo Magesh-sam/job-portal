@@ -10,9 +10,15 @@ export type Job = {
   salaryRangeMax: number;
   experienceMin: number;
   experienceMax: number;
-
 };
 
 export interface ProvidersProps {
   children: React.ReactNode;
+}
+
+export interface SavedJobCardProps {
+  jobTitle: string;
+  company: string;
+  shortDescription: string;
+  id: string;
 }

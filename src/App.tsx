@@ -13,6 +13,7 @@ import Login from "./pages/Login";
 import JobForm from "./pages/JobForm";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
+import SavedJobs from "./pages/SavedJobs";
 
 function App() {
   const user = useSelector((state: RootState) => state.user);
@@ -28,6 +29,10 @@ function App() {
         <Route
           path="/jobs"
           element={isAuthenticated ? <Jobs /> : <Unauthorized />}
+        />
+        <Route
+          path="/jobs/saved"
+          element={isAuthenticated ? <SavedJobs /> : <Unauthorized />}
         />
         <Route
           path="/jobs/:id"

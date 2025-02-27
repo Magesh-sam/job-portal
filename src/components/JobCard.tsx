@@ -31,14 +31,12 @@ type JobCardContent = Job & {
 const JobCardUserActions = ({ id }: { id: string }) => {
   const navigate = useNavigate();
 
-  const handleApply = () => {};
-
   return (
     <CardFooter className="flex justify-end gap-3">
       <Button variant="outline" onClick={() => navigate(`/jobs/${id}`)}>
         View
       </Button>
-      <Button onClick={handleApply} variant={"default"}>
+      <Button onClick={() => navigate(`/jobs/apply/${id}`)} variant={"default"}>
         Apply
       </Button>
     </CardFooter>

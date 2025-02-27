@@ -1,6 +1,11 @@
 import { Job } from "@/lib/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+type SaveJob = Job & { isSaved: boolean };
+type initialState = {
+  jobs: SaveJob[];
+};
+
 const initialState = {
   jobs: [] as Job[],
 };
@@ -9,23 +14,18 @@ const jobsSlice = createSlice({
   name: "jobs",
   initialState,
   reducers: {
-    addJob(state, action: PayloadAction<Job>) {
-      state.jobs.push(action.payload);
-    },
-    editJob(state, action: PayloadAction<Job>) {
-      const { id } = action.payload;
-      const index = state.jobs.findIndex((job) => job.id === id);
+    saveJob(state, action: PayloadAction<SaveJob>) {
+      const index = state.jobs.findIndex((job) => job.id === action.payload.id);
 
-      if (index !== -1) {
-        state.jobs[index] = action.payload;
+      if (index == -1) {
+        state.jobs.push(action.payload);
       }
     },
-    deleteJob(state, action: PayloadAction<string>) {
-      const idToDelete = action.payload;
-      state.jobs = state.jobs.filter((job) => job.id !== idToDelete);
+    deleteSavedJobById(state, action: PayloadAction<string>) {
+      state.jobs = state.jobs.filter((job) => job.id !== action.payload);
     },
   },
 });
 
-export const { addJob, editJob, deleteJob } = jobsSlice.actions;
+export const { saveJob, deleteSavedJobById } = jobsSlice.actions;
 export default jobsSlice.reducer;

@@ -32,7 +32,13 @@ function ProfileDropdown() {
         <DropdownMenuLabel>Hi, {user.username}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => navigate(`/profile`)}>
-          View Profile
+          Profile
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => navigate(`/jobs/saved`)}>
+          Saved jobs
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => navigate(`/profile`)}>
+          Applied Jobs
         </DropdownMenuItem>
         <DropdownMenuItem onClick={Logout}>
           {" "}

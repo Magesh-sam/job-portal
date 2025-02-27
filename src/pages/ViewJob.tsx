@@ -3,11 +3,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import useGetJobById from "@/hooks/useGetJobById";
+import { AppDispatch, RootState } from "@/redux/store";
 import { Bookmark, ChevronRight, MapPin, Star } from "lucide-react";
-import { useParams } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router";
+import { saveJob } from "@/redux/features/jobs/jobsSlice";
 
 function ViewJob() {
   const { id } = useParams();
+  const savedJobs = useSelector((state: RootState) => state.jobs.jobs);
+  const dispatch: AppDispatch = useDispatch();
+  const navigate = useNavigate();
   const { data: job, isLoading, error, isError } = useGetJobById(id || "");
   if (isLoading)
     return (
@@ -22,6 +28,15 @@ function ViewJob() {
   if (isError) return <p>{error?.message}</p>;
   if (!job) return <p>Job not found</p>;
   console.log(job);
+  const handleSaveJob = () => {
+    const index = savedJobs.findIndex((j) => j.id === job.id);
+    if (index === -1) {
+      const newJob = { ...job, isSaved: true };
+      dispatch(saveJob(newJob));
+    } else {
+      alert("Job already saved");
+    }
+  };
   return (
     <main className="min-h-screen bg-background container mx-auto px-4 py-8  grid grid-cols-1 justify-items-center gap-4">
       <Card className="w-full max-w-2xl mx-auto dark:bg-zinc-900">
@@ -73,11 +88,19 @@ function ViewJob() {
         </CardContent>
       </Card>
       <div className="flex gap-4">
-        <Button className=" group transition-all" variant="outline">
-          Save{" "}
+        <Button
+          className=" group transition-all disabled:cursor-not-allowed"
+          variant="outline"
+          onClick={handleSaveJob}
+          disabled={savedJobs.some((j) => j.id === job.id)}
+        >
+          {savedJobs.some((j) => j.id === job.id) ? "Saved" : "Save"}{" "}
           <Bookmark className="group-hover:fill-black dark:group-hover:fill-white" />
         </Button>
-        <Button className="group transition-all">
+        <Button
+          className="group transition-all"
+          onClick={() => navigate(`/jobs/apply/${job.id}`)}
+        >
           Apply Now <ChevronRight className="transition-all group-hover:ml-2" />
         </Button>
       </div>
