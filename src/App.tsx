@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar";
 import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
 import Unauthorized from "./components/Unauthorized";
-import LandingPage from "./pages/LandingPage";
 import UnderConstruction from "./pages/UnderConstruction";
 import NotFound from "./pages/NotFound";
 import ViewJob from "./pages/ViewJob";
@@ -54,7 +53,6 @@ function App() {
         />
         <Route path="/jobs/:id/edit" element={<UnderConstruction />} />
         <Route path="/jobs/:id/apply" element={<UnderConstruction />} />
-        <Route path="/new-home" element={<LandingPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
