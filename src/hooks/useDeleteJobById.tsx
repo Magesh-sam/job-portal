@@ -2,11 +2,13 @@ import { queryClient } from "@/components/Providers";
 import { API } from "@/lib/utils";
 import { useMutation } from "@tanstack/react-query";
 
-const deleteJob = (id: string) => {
-  return API.delete(`/jobs/${id}`);
+const deleteJob = async (id: string) => {
+  const response = await API.delete(`/jobs/${id}`);
+
+  return response.data;
 };
 function useDeleteJobById() {
-  const mutuation = useMutation({
+  const mutation = useMutation({
     mutationFn: deleteJob,
     onSuccess: () => {
       queryClient.invalidateQueries({
@@ -14,6 +16,6 @@ function useDeleteJobById() {
       });
     },
   });
-  return mutuation;
+  return mutation;
 }
 export default useDeleteJobById;

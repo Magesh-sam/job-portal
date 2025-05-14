@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function autheticateUser(username: string, password: string) {
+export function authenticateUser(username: string, password: string) {
   const index = dummyUsers.findIndex(
     (user) => user.username === username && user.password === password
   );

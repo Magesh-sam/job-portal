@@ -4,8 +4,12 @@ import { useQuery } from "@tanstack/react-query";
 const getJobById = async (id: string) => {
   try {
     const response = await API.get(`/jobs/${id}`);
-    return response.data;
+    const data = await response.data;
+    return data;
   } catch (error) {
+    if (error) {
+      throw error;
+    }
     throw new Error("Failed to fetch jobs");
   }
 };

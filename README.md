@@ -4,15 +4,17 @@
 
 ## Features
 
-- Add new job
-- Edit an existing job
-- Delete a job
-- Apply for a job
-- Filter jobs
-- Search jobs
-- Light/Dark/System Theme Toggle
-- Profile page
-- Differnt user roles (user, admin)
+- [x] Add new job
+- [x] Edit an existing job
+- [x] Delete a job
+- [x] Save a job
+- [ ] Apply for a job
+- [ ] View applied jobs
+- [ ] Filter jobs
+- [ ] Search jobs
+- [x] Light/Dark/System Theme Toggle
+- [ ] Profile page
+- [x] Different user roles (user, admin)
 
 ## How to setup locally
 
@@ -21,8 +23,8 @@
 - install dependencies
   `pnpm install`
 - get tinyMCE key for WYSIWYG editor and add it in your .env
-- front-end : `pnpm run dev`
-- json-server(API) : `pnpm run server`
+- run front-end : `pnpm run dev`
+- run json-server(API) : `pnpm run server`
 - Feel free to customize **db.json** (data for API)
 
 ## Login Info

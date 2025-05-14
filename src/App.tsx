@@ -13,6 +13,7 @@ import JobForm from "./pages/JobForm";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import SavedJobs from "./pages/SavedJobs";
+import HireTalent from "./pages/HireTalent";
 
 function App() {
   const user = useSelector((state: RootState) => state.user);
@@ -25,6 +26,16 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
+        <Route
+          path="/hire-talent"
+          element={
+            isAuthenticated && user.role === "admin" ? (
+              <HireTalent />
+            ) : (
+              <Unauthorized />
+            )
+          }
+        />
         <Route
           path="/jobs"
           element={isAuthenticated ? <Jobs /> : <Unauthorized />}

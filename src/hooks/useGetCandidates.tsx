@@ -1,20 +1,20 @@
 import { API } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
 
-const getJobs = async () => {
+const getCandidates = async () => {
   try {
-    const response = await API.get("/jobs");
+    const response = await API.get("/candidates");
     return response.data;
   } catch (error) {
     throw error || new Error("Failed to fetch jobs");
   }
 };
 
-function useGetJobs() {
+function useGetCandidates() {
   return useQuery({
     queryKey: ["jobs"],
-    queryFn: getJobs,
+    queryFn: getCandidates,
   });
 }
 
-export default useGetJobs;
+export default useGetCandidates;

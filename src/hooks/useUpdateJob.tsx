@@ -3,8 +3,9 @@ import { Job } from "@/lib/types";
 import { API } from "@/lib/utils";
 import { useMutation } from "@tanstack/react-query";
 
-const updateJob = (job: Job) => {
-  return API.patch(`/jobs/${job.id}`, job);
+const updateJob = async (job: Job) => {
+  const response = await API.patch(`/jobs/${job.id}`, job);
+  return response.data;
 };
 function useUpdateJob() {
   const mutation = useMutation({

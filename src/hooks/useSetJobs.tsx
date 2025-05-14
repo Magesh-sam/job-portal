@@ -3,11 +3,13 @@ import { Job } from "@/lib/types";
 import { API } from "@/lib/utils";
 import { useMutation } from "@tanstack/react-query";
 
-const setJob = (job: Job) => {
-  return API.post("/jobs", job);
+const setJob = async (job: Job) => {
+  const response = await API.post("/jobs", job);
+
+  return response.data;
 };
 function useSetJobs() {
-  const mutuation = useMutation({
+  const mutation = useMutation({
     mutationFn: setJob,
     onSuccess: () => {
       queryClient.invalidateQueries({
@@ -15,6 +17,6 @@ function useSetJobs() {
       });
     },
   });
-  return mutuation;
+  return mutation;
 }
 export default useSetJobs;

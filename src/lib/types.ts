@@ -22,3 +22,14 @@ export interface SavedJobCardProps {
   shortDescription: string;
   id: string;
 }
+
+export interface Candidate {
+  id: number;
+  name: string;
+  title: string;
+  location: string;
+  email: string;
+  skills: string[];
+  experience: number;
+  isAvailable: boolean;
+}

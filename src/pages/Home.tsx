@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 
 import {
   ArrowRight,
@@ -81,7 +80,7 @@ export default function Home() {
               { name: "Space Exploration", count: "900+" },
               { name: "Sustainable Energy", count: "4,100+" },
               { name: "Cybersecurity", count: "5,000+" },
-              { name: "Neurotech", count: "700+" },
+              { name: "Historical Archaeology", count: "700+" },
               { name: "Robotic Process Automation", count: "2,300+" },
             ].map((category, index) => (
               <div
