@@ -104,7 +104,6 @@ function JobCard({
   shortDescription,
   role,
 }: JobCardContent) {
-  console.log(jobTitle);
   return (
     <Card className="bg-zinc-100 dark:bg-zinc-800" id={id}>
       <CardHeader>

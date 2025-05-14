@@ -23,7 +23,7 @@ function ProfileDropdown() {
   };
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>
+      <DropdownMenuTrigger asChild>
         <Button aria-label="Profile" variant={"ghost"} className="w-10 h-10">
           <User />
         </Button>
