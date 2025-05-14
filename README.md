@@ -24,7 +24,7 @@
   `pnpm install`
 - get tinyMCE key for WYSIWYG editor and add it in your .env
 - run front-end : `pnpm run dev`
-- run json-server(API) : `pnpm run server`
+- run json-server(API) : `pnpm run serve`
 - Feel free to customize **db.json** (data for API)
 
 ## Login Info
