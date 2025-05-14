@@ -66,7 +66,7 @@ const JobCardAdminActions = ({ id }: { id: string }) => {
       <>
         <Button onClick={handleEdit}>Edit</Button>
         <Dialog>
-          <DialogTrigger>
+          <DialogTrigger asChild>
             <Button variant={"destructive"}>Delete</Button>
           </DialogTrigger>
           <DialogContent>
@@ -78,7 +78,7 @@ const JobCardAdminActions = ({ id }: { id: string }) => {
               </DialogDescription>
             </DialogHeader>
             <DialogFooter>
-              <DialogClose>
+              <DialogClose asChild>
                 <Button>Cancel</Button>
               </DialogClose>
               <Button
@@ -109,7 +109,7 @@ function JobCard({
       <CardHeader>
         <CardTitle>{jobTitle}</CardTitle>
         <CardDescription>
-          {company} - {locations.join(", ")}
+          {company} - {locations?.join(", ")}
         </CardDescription>
       </CardHeader>
       <CardContent>
