@@ -37,10 +37,17 @@
 Here are some screenshots of the project:
 
 ![Screenshot 1](public/screenshots/1.png)
+<br>
 ![Screenshot 2](public/screenshots/2.png)
+<br>
 ![Screenshot 3](public/screenshots/3.png)
+<br>
 ![Screenshot 4](public/screenshots/4.png)
+<br>
 ![Screenshot 5](public/screenshots/5.png)
+<br>
 ![Screenshot 6](public/screenshots/6.png)
+<br>
 ![Screenshot 7](public/screenshots/7.png)
+<br>
 ![Screenshot 8](public/screenshots/8.png)
