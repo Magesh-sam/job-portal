@@ -14,8 +14,6 @@ import {
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { delay, isUserExist } from "@/lib/utils";
 import { Link, useNavigate } from "react-router";
-import { useSelector } from "react-redux";
-import { RootState } from "@/redux/store";
 
 type FormData = {
   username: string;
@@ -33,7 +31,6 @@ export default function RegisterForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
-  const user = useSelector((state: RootState) => state.user);
 
   const onSubmit = async (data: FormData) => {
     setIsLoading(true);

@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar";
 import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
 import Unauthorized from "./components/Unauthorized";
-import UnderConstruction from "./pages/UnderConstruction";
 import NotFound from "./pages/NotFound";
 import ViewJob from "./pages/ViewJob";
 import Login from "./pages/Login";
@@ -52,6 +51,7 @@ function App() {
           path="/jobs/edit/:id"
           element={isAuthenticated ? <JobForm /> : <Unauthorized />}
         />
+
         <Route
           path="/jobs/new"
           element={
@@ -62,8 +62,6 @@ function App() {
             )
           }
         />
-        <Route path="/jobs/:id/edit" element={<UnderConstruction />} />
-        <Route path="/jobs/:id/apply" element={<UnderConstruction />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

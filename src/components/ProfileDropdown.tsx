@@ -36,14 +36,9 @@ function ProfileDropdown() {
         </DropdownMenuItem>
 
         {user.role === "user" && (
-          <>
-            <DropdownMenuItem onClick={() => navigate("/jobs/saved")}>
-              Saved jobs
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => navigate("/profile")}>
-              Applied Jobs
-            </DropdownMenuItem>
-          </>
+          <DropdownMenuItem onClick={() => navigate("/jobs/saved")}>
+            Saved jobs
+          </DropdownMenuItem>
         )}
         <DropdownMenuItem onClick={Logout}>
           {" "}

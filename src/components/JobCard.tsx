@@ -36,7 +36,7 @@ const JobCardUserActions = ({ id }: { id: string }) => {
       <Button variant="outline" onClick={() => navigate(`/jobs/${id}`)}>
         View
       </Button>
-      <Button onClick={() => navigate(`/jobs/apply/${id}`)} variant={"default"}>
+      <Button onClick={() => alert("Applied!")} variant={"default"}>
         Apply
       </Button>
     </CardFooter>

@@ -8,12 +8,8 @@
 - [x] Edit an existing job
 - [x] Delete a job
 - [x] Save a job
-- [ ] Apply for a job
-- [ ] View applied jobs
-- [ ] Filter jobs
-- [ ] Search jobs
 - [x] Light/Dark/System Theme Toggle
-- [ ] Profile page
+- [x] Profile page
 - [x] Different user roles (user, admin)
 
 ## How to setup locally

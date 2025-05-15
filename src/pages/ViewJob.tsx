@@ -6,14 +6,13 @@ import useGetJobById from "@/hooks/useGetJobById";
 import { AppDispatch, RootState } from "@/redux/store";
 import { Bookmark, ChevronRight, MapPin, Star } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router";
+import { useParams } from "react-router";
 import { saveJob } from "@/redux/features/jobs/jobsSlice";
 
 function ViewJob() {
   const { id } = useParams();
   const savedJobs = useSelector((state: RootState) => state.jobs.jobs);
   const dispatch: AppDispatch = useDispatch();
-  const navigate = useNavigate();
   const { data: job, isLoading, error, isError } = useGetJobById(id || "");
   if (isLoading)
     return (
@@ -99,7 +98,7 @@ function ViewJob() {
         </Button>
         <Button
           className="group transition-all"
-          onClick={() => navigate(`/jobs/apply/${job.id}`)}
+          onClick={() => alert("Applied")}
         >
           Apply Now <ChevronRight className="transition-all group-hover:ml-2" />
         </Button>
